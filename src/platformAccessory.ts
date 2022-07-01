@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable no-console */
-import { Service, PlatformAccessory, CharacteristicValue, Characteristic, CharacteristicEventTypes } from 'homebridge';
+
+import { Service, PlatformAccessory, CharacteristicValue} from 'homebridge';
 // import { forceColor } from 'homebridge/lib/logger';
 
 import { AnimaHomeHomebridgePlatform } from './platform';
@@ -644,7 +645,7 @@ export class Conditioner extends Device {
   async setTemperatureDisplayUnits(value: CharacteristicValue) {
     this.Properties.TemperatureDisplayUnits = this.platform.Characteristic.TemperatureDisplayUnits.CELSIUS;
 
-    //this.platform.log.info(`Set Characteristic Temperature Display Units (${this.getName()}) ->`, this.Properties.TemperatureDisplayUnits);
+    this.platform.log.info(`Set Characteristic Temperature Display Units (${this.getName()}) ->`, this.Properties.TemperatureDisplayUnits, value);
   }
 
 }
@@ -834,7 +835,7 @@ export class WarmFloor extends Device {
   async setTemperatureDisplayUnits(value: CharacteristicValue) {
     this.Properties.TemperatureDisplayUnits = this.platform.Characteristic.TemperatureDisplayUnits.CELSIUS;
 
-    // this.platform.log.info(`Set Characteristic Temperature Display Units (${this.getName()}) ->`, this.Properties.TemperatureDisplayUnits);
+    this.platform.log.info(`Set Characteristic Temperature Display Units (${this.getName()}) ->`, this.Properties.TemperatureDisplayUnits, value);
   }
 
 }

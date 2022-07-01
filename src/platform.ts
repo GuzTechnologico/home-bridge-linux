@@ -97,7 +97,7 @@ export class AnimaHomeHomebridgePlatform implements DynamicPlatformPlugin {
     this.log.debug('Finished initializing platform:', this.config.name);
     this.classes_instances = [];
 
-    const client = createClient({url: `redis://localhost:6379`});
+    const client = createClient({url: 'redis://localhost:6379'});
     client.connect();
     const subscriber = client.duplicate();
     subscriber.connect();
